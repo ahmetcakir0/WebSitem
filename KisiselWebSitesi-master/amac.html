@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/layout/layout.css">
+    <link type="text/css" rel="stylesheet" href="css/bilgilerim.css">
+    <title>Ben Kimim?</title>
+    <style>
+        /* Genel Sayfa Stili */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center; /* Yatayda ortalama */
+            align-items: center; /* Dikeyde ortalama */
+            text-align: center;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 900px; /* Maksimum genişlik */
+            padding: 20px;
+        }
+
+        /* Sayfa İçeriği */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 350px;
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+
+        .card img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .card h4 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Scroll to Top Button */
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sayfa İçeriği -->
+    <div class="content">
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/top.jpg" alt="Top"></button>
+        <header style="font-size: 24px; font-weight: bold;">Ahmet ÇAKIR - Kişisel Web Sayfası</header>
+        <br><br>
+        <div class="card">
+            <br><br>
+            <img src="img/ozgecmis.jpeg" alt="Avatar" style="width:300px;height:300px;">
+            <div class="container">
+                <h4><b>Ahmet ÇAKIR</b></h4>
+                <h4><b>Ben Kimim? (Amaç, Hedef)</b></h4>
+                <p>Merhaba, ben Ahmet Çakır. Muğla'da yaşıyorum. 18 yaşında meslek lisesinde yazılım bölümü okuyan bir Junior Developer'ım. Bu sektörde devam etmek üzere ilk önceliğim üniversite okumak. Bilgisayar Mühendisliği bölümünü istiyorum ve bunun için çalışıyorum. Aktif olarak stajım bulunmakta ve buradaki en büyük yardımcım Hakan Sökün. Beni en temel seviyeden en iyi seviyelere getirmek için çabalayan bir abimdir kendisi. Onun yardımıyla Kütüphane Otomasyon sistemi yazdım.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>Hakkında | Copyright | Bilgilerim | İletişim</div>
+        <br />
+        <div>Email: ahmethmo8@gmail.com</div>
+        <div>© 2025 Tüm hakları saklıdır.</div>
+    </footer>
+
+    <script>
+        // Scroll to Top Button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0; 
+        }
+    </script>
+
+</body>
+</html>
