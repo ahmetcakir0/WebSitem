@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmet ÇAKIR - CV</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      min-height: 100vh;
+    }
+
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      overflow: auto;
+    }
+
+    .menu li {
+      color: white;
+      padding: 15px;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu li a:hover, .menu li a.active {
+      background-color: #575757;
+    }
+
+    .altmenu {
+      display: none;
+      background-color: #444;
+      list-style-type: none;
+      padding-left: 15px;
+    }
+
+    .altmenu li {
+      padding: 10px 0;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 40px 20px 80px;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .cv-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      width: 100%;
+      padding: 30px 40px;
+      user-select: text;
+    }
+
+    .cv-card h1 {
+      margin-top: 0;
+      font-size: 36px;
+      color: #333;
+      user-select: none;
+    }
+
+    .cv-card section {
+      margin-top: 30px;
+    }
+
+    .cv-card section h3 {
+      font-size: 22px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      color: #444;
+      user-select: none;
+    }
+
+    .cv-card section p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-left: 10px;
+      user-select: text;
+    }
+
+    .cv-card section p strong {
+      font-weight: 700;
+    }
+
+    /* Scroll to top button */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 60px;
+      right: 30px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 18px;
+      z-index: 100;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+    /* Back button */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 270px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 250px;
+      width: calc(100% - 250px);
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 100px 20px 80px;
+        justify-content: center;
+      }
+
+      footer {
+        left: 0;
+        width: 100%;
+      }
+
+      .back-button {
+        left: 20px;
+        top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Geri Butonu -->
+  <a href="index.html" class="back-button">← Geri</a>
+
+  <!-- Menü -->
+  <ul class="menu">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li>
+      <a href="#" onclick="altmenuToggle()">Bilgilerim <img style="width:20px; float:right;" src="css/layout/arrowbottom.svg" alt="Ok İkonu"/></a>
+      <ul class="altmenu" id="altmenu">
+        <li><a href="kisisel.html" target="_blank">Kişisel Bilgilerim</a></li>
+        <li><a href="egitim.html" target="_blank">Eğitim Bilgilerim</a></li>
+        <li><a class="active" target="_blank">Ben kimim?</a></li>
+      </ul>
+    </li>
+    <li><a href="hakkımda.html" target="_blank">Hakkımda</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+
+  <!-- İçerik -->
+  <div class="content">
+    <div class="cv-card" tabindex="0" contenteditable="true" spellcheck="false" aria-label="CV İçeriği">
+      <h1>Ahmet ÇAKIR</h1>
+
+      <section id="personal" aria-label="Kişisel Bilgiler">
+        <h3>Kişisel Bilgiler</h3>
+        <p><strong>Ad Soyad:</strong> Ahmet ÇAKIR</p>
+        <p><strong>Doğum Tarihi:</strong> 08.10.2007</p>
+        <p><strong>Doğum Yeri:</strong> Muğla</p>
+      </section>
+
+      <section id="education" aria-label="Eğitim Bilgileri">
+        <h3>Eğitim Bilgileri</h3>
+        <p>Staj: Muğla Büyükşehir Belediyesi Bilgi İşlem Daire Başkanlığı - Yazılım Birimi</p>
+        <p>Zübeyde Hanım Mesleki ve Teknik Anadolu Lisesi</p>
+        <p>Emirbeyazıt İlkokulu</p>
+      </section>
+
+      <section id="skills" aria-label="Yetenekler">
+        <h3>Yetenekler</h3>
+        <p><strong>Programlama Dilleri:</strong> C#, HTML, CSS</p>
+        <p><strong>Programlar:</strong> .NET Framework, WinForm</p>
+      </section>
+
+      <section id="projects" aria-label="Projeler">
+        <h3>Projeler</h3>
+        <p>2019 - Kütüphane Otomasyon Sistemi (WinForm, C#, MSSQL)</p>
+      </section>
+
+      <section id="experience" aria-label="İş Deneyimleri">
+        <h3>İş Deneyimleri</h3>
+        <p>Muğla Büyükşehir Belediyesi (Stajyer, bir yıllık okul dönemi)</p>
+      </section>
+
+      <section id="others" aria-label="Diğer Bilgiler">
+        <h3>Diğer</h3>
+        <p><strong>Hobiler:</strong> GYM, Futbol, Basketbol, Bilgisayar, Bilişim, Dizi-Film, Müzik</p>
+        <p><strong>Diller:</strong> İngilizce (B Seviye)</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Yukarı Çık Butonu -->
+  <button onclick="topFunction()" id="myBtn" title="Sayfanın Üstüne Çık">↑</button>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Tüm hakları saklıdır. | Email: ahmethmo8@gmail.com
+  </footer>
+
+  <script>
+    // Scroll to top button
+    const mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Altmenu toggle
+    const altmenu = document.getElementById("altmenu");
+    altmenu.style.display = "block";
+    let menuOpen = true;
+    function altmenuToggle() {
+      menuOpen = !menuOpen;
+      altmenu.style.display = menuOpen ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

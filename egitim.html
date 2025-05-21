@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eğitim Bilgilerim</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      min-height: 100vh;
+    }
+
+    /* Menü */
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      overflow: auto;
+    }
+
+    .menu li {
+      color: white;
+      padding: 15px;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu li a:hover, .menu li a.active {
+      background-color: #575757;
+    }
+
+    .altmenu {
+      display: none;
+      background-color: #444;
+      list-style-type: none;
+      padding-left: 15px;
+    }
+
+    .altmenu li {
+      padding: 10px 0;
+    }
+
+    /* Sayfa içeriği */
+    .content {
+      margin-left: 250px;
+      padding: 40px 20px 80px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .card h4 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 250px;
+      width: calc(100% - 250px);
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    /* Scroll to Top */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 60px;
+      right: 30px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 18px;
+      z-index: 100;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+    /* Geri Butonu */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 270px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 100px 20px 80px;
+      }
+
+      footer {
+        left: 0;
+        width: 100%;
+      }
+
+      .back-button {
+        left: 20px;
+        top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Geri Butonu -->
+  <a href="index.html" class="back-button">← Geri</a>
+
+  <!-- Menü -->
+  <ul class="menu">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li>
+      <a href="#" onclick="altmenu1()">Bilgilerim <img style="width:20px; float:right;" src="css/layout/arrowbottom.svg" /></a>
+      <ul class="altmenu" id="altmenu1">
+        <li><a href="kisisel.html" target="_blank">Kişisel Bilgilerim</a></li>
+        <li><a class="active" target="_blank">Eğitim Bilgilerim</a></li>
+        <li><a href="amac.html" target="_blank">Ben kimim?</a></li>
+      </ul>
+    </li>
+    <li><a href="hakkımda.html" target="_blank">Hakkımda</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+
+  <!-- Sayfa İçeriği -->
+  <div class="content">
+    <header style="font-size: 24px; font-weight: bold; text-align:center;">Ahmet ÇAKIR - Kişisel Web Sayfası</header>
+    <br /><br />
+    <div class="card">
+      <img src="img/ozgecmis.jpeg" alt="Avatar" />
+      <div class="container">
+        <h4><b>Ahmet Çakır</b></h4>
+        <h4><b>Eğitim Bilgilerim</b></h4>
+        <p>Emirbeyazıt İlkokulu</p>
+        <p>Zübeyde Hanım Mesleki ve Teknik Anadolu Lisesi</p>
+        <p>Staj: Muğla Büyükşehir Belediyesi Bilgi İşlem Daire Başkanlığı - Yazılım Birimi</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Butonu -->
+  <button onclick="topFunction()" id="myBtn" title="Sayfanın Üstüne Çık">↑</button>
+
+  <!-- Sabit Footer -->
+  <footer>
+    © 2025 Tüm hakları saklıdır. | Email: ahmethmo8@gmail.com
+  </footer>
+
+  <script>
+    // Yukarı Çık Butonu
+    const mybutton = document.getElementById("myBtn");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Alt Menü Açma
+    document.getElementById("altmenu1").style.display = "block";
+    var rd1 = false;
+    function altmenu1() {
+      var submenu = document.getElementById("altmenu1");
+      submenu.style.display = rd1 ? "block" : "none";
+      rd1 = !rd1;
+    }
+  </script>
+
+</body>
+</html>

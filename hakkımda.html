@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmet ÇAKIR - CV</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      min-height: 100vh;
+    }
+
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      overflow: auto;
+    }
+
+    .menu li {
+      color: white;
+      padding: 15px;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu li a:hover, .menu li a.active {
+      background-color: #575757;
+    }
+
+    .altmenu {
+      display: none;
+      background-color: #444;
+      list-style-type: none;
+      padding-left: 15px;
+    }
+
+    .altmenu li {
+      padding: 10px 0;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 40px 20px 80px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      /* Gölge kaldırıldı pdf için temiz çıktı */
+      /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+      max-width: 700px;
+      margin: auto;
+      padding: 20px 30px;
+      text-align: left;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      user-select: none;
+    }
+
+    .card p, .card ul {
+      margin-bottom: 15px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 250px;
+      width: calc(100% - 250px);
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 60px;
+      right: 30px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 18px;
+      z-index: 100;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 270px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    /* PDF indir butonu */
+    #downloadPdf {
+      margin: 10px auto 30px auto;
+      display: block;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      user-select: none;
+    }
+
+    #downloadPdf:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 100px 20px 80px;
+      }
+
+      footer {
+        left: 0;
+        width: 100%;
+      }
+
+      .back-button {
+        left: 20px;
+        top: 80px;
+      }
+
+      #downloadPdf {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Geri Butonu -->
+  <a href="index.html" class="back-button">← Geri</a>
+
+  <!-- Menü -->
+  <ul class="menu">
+    <li><a href="index.html">Anasayfa</a></li>
+    <li>
+      <a href="#" onclick="altmenu1()">Bilgilerim <img style="width:20px; float:right;" src="css/layout/arrowbottom.svg" alt="Ok İkonu" /></a>
+      <ul class="altmenu" id="altmenu1">
+        <li><a href="kisisel.html" target="_blank">Kişisel Bilgilerim</a></li>
+        <li><a href="egitim.html" target="_blank">Eğitim Bilgilerim</a></li>
+        <li><a class="active" target="_blank">Ben kimim?</a></li>
+      </ul>
+    </li>
+    <li><a href="hakkımda.html" target="_blank">Hakkımda</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+
+  <!-- İçerik -->
+  <div class="content">
+    <!-- PDF indir butonu -->
+    <button id="downloadPdf">CV'yi PDF Olarak İndir</button>
+
+    <div class="card" id="contentToPrint">
+      <h2>Ahmet ÇAKIR - Özgeçmiş</h2>
+      
+      <h3>Kişisel Bilgiler</h3>
+      <p><strong>Ad Soyad:</strong> Ahmet ÇAKIR</p>
+      <p><strong>Doğum Tarihi:</strong> 08.10.2007</p>
+      <p><strong>Doğum Yeri:</strong> Muğla</p>
+
+      <h3>Eğitim Bilgileri</h3>
+      <p>Staj: Muğla Büyükşehir Belediyesi Bilgi İşlem Daire Başkanlığı - Yazılım Birimi</p>
+      <p>Zübeyde Hanım Mesleki ve Teknik Anadolu Lisesi</p>
+      <p>Emirbeyazıt İlkokulu</p>
+
+      <h3>Yetenekler</h3>
+      <ul>
+        <li>Programlama Dilleri: C#, HTML, CSS</li>
+        <li>Programlar: .NET Framework, WinForm</li>
+      </ul>
+
+      <h3>Projeler</h3>
+      <p>2024 - Kütüphane Otomasyon Sistemi (WinForm, C#, MSSQL)</p>
+
+      <h3>İş Deneyimleri</h3>
+      <p>Muğla Büyükşehir Belediyesi (Stajyer, bir yıllık okul dönemi)</p>
+
+      <h3>Diğer Bilgiler</h3>
+      <p><strong>Hobiler:</strong> GYM, Futbol, Basketbol, Bilgisayar, Bilişim, Dizi-Film, Müzik</p>
+      <p><strong>Diller:</strong> İngilizce (B Seviye)</p>
+    </div>
+  </div>
+
+  <!-- Yukarı Çık Butonu -->
+  <button onclick="topFunction()" id="myBtn" title="Sayfanın Üstüne Çık">↑</button>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Tüm hakları saklıdır. | Email: ahmethmo8@gmail.com
+  </footer>
+
+  <!-- Kütüphaneler -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script>
+    // Scroll to top button
+    const mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Altmenu toggle
+    document.getElementById("altmenu1").style.display = "block";
+    var rd1 = false;
+    function altmenu1() {
+      var submenu = document.getElementById("altmenu1");
+      submenu.style.display = rd1 ? "block" : "none";
+      rd1 = !rd1;
+    }
+
+    // PDF indir butonu
+    document.getElementById("downloadPdf").addEventListener("click", function() {
+      const element = document.getElementById("contentToPrint");
+      var opt = {
+        margin: 0.2,
+        filename: 'Ahmet_CAKIR_CV.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3, logging: false, letterRendering: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>İletişim</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            min-height: 100vh;
+        }
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            overflow: auto;
+        }
+        .menu li {
+            color: white;
+            padding: 15px;
+        }
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .menu li a:hover, .menu li a.active {
+            background-color: #575757;
+        }
+        .altmenu {
+            display: none;
+            background-color: #444;
+            list-style-type: none;
+            padding-left: 15px;
+        }
+        .altmenu li {
+            padding: 10px 0;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 40px 20px 80px;
+            min-height: 100vh;
+            position: relative;
+            max-width: 700px;
+            margin-right: auto;
+        }
+        /* İletişim başlığını biraz sola kaydır */
+        .content h2 {
+            margin-left: 20px;
+            color: #333;
+        }
+        /* Geri buton stili */
+        .back-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            user-select: none;
+        }
+        .back-button:hover {
+            background-color: #575757;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type=text], input[type=email], input[type=tel], input[type=date], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            font-size: 16px;
+        }
+        textarea {
+            height: 120px;
+        }
+        button[type=submit] {
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type=submit]:hover {
+            background-color: #575757;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 250px;
+            width: calc(100% - 250px);
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+        footer a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            right: 30px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            z-index: 100;
+        }
+        #myBtn:hover {
+            background-color: #555;
+        }
+        .logo {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+                padding: 100px 20px 80px;
+                max-width: 100%;
+                margin-right: 0;
+                margin-left: 0;
+            }
+            footer {
+                left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menü -->
+    <ul class="menu">
+        <li><a href="index.html">Anasayfa</a></li>
+        <li>
+            <a href="#" onclick="altmenu1()">Bilgilerim <img style="width:20px; float:right; margin-top:5px;" src="css/layout/arrowbottom.svg" alt="Ok" /></a>
+            <ul class="altmenu" id="altmenu1">
+                <li><a href="kisisel.html" target="_blank">Kişisel Bilgilerim</a></li>
+                <li><a href="egitim.html" target="_blank">Eğitim Bilgilerim</a></li>
+                <li><a href="amac.html" target="_blank">Ben kimim?</a></li>
+            </ul>
+        </li>
+        <li><a href="hakkımda.html" target="_blank">Hakkımda</a></li>
+        <li><a class="active">İletişim</a></li>
+    </ul>
+
+    <!-- İçerik -->
+    <div class="content">
+        <a href="index.html" class="back-button">← Geri</a>
+
+        <h2>İLETİŞİM</h2>
+        <form action="https://formspree.io/f/mnndwdve" method="POST">
+            <label>
+                Your email:
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Your message:
+                <textarea name="message" required></textarea>
+            </label>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Yukarı çık butonu -->
+    <button onclick="topFunction()" id="myBtn" title="Sayfanın Üstüne Çık">↑</button>
+
+    <!-- Footer -->
+    <footer>
+        <center>
+            <div>
+                <a href="hakkımda.html" target="_blank">Hakkında</a> | 
+                <a href="index.html">Anasayfa</a> | 
+                <a href="kisisel.html" target="_blank">Kişisel Bilgilerim</a> | 
+                <a href="iletisim.html">İletişim</a>
+            </div>
+            <br />
+            <div>Tel: 05318612795</div>
+            <div>Email: jrewin@hotmail.com</div>
+            <div>© 2019 Tüm hakları saklıdır.</div>
+        </center>
+    </footer>
+
+<script>
+    // Altmenu toggle
+    var rd1 = true;
+    function altmenu1() {
+        var submenu = document.getElementById("altmenu1");
+        if (rd1) {
+            submenu.style.display = "block";
+        } else {
+            submenu.style.display = "none";
+        }
+        rd1 = !rd1;
+    }
+
+    // Scroll to top button
+    const mybutton = document.getElementById("myBtn");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

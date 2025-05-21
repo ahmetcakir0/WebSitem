@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Anasayfa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden; /* Yatay kaydırma engelleniyor */
+    }
+
+    .content {
+      flex-grow: 1;
+      overflow-y: auto; /* Sayfa kaydırılabilir olacak */
+      padding-bottom: 80px; /* Footer ile çakışmaması için biraz boşluk bırakıyoruz */
+    }
+
+    /* Başlık Bölümü */
+    .main-header {
+      text-align: center;	
+      padding: 60px 20px 20px 20px;
+      position: relative;
+    }
+
+    .main-header .logo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%; /* Logoyu yuvarlak hale getirir */
+   }
+
+
+    /* Sosyal Medya İkonları */
+    .social-media {
+      margin-top: 20px; /* Başlık ve sosyal medya ikonları arasına boşluk ekler */
+      text-align: center; /* İkonları ortalar */
+    }
+
+    .social-media a img {
+      width: 35px;
+      height: 35px;
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+
+    /* Sayfa Kartları Düzeni */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+      flex-grow: 1;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      height: 300px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #333;
+      padding: 12px 20px;
+      border-radius: 4px;
+      display: inline-block;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .card a img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card a:hover {
+      background-color: #555;
+    }
+
+    /* Footer Bölümü */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sayfa İçeriği -->
+  <div class="content">
+    <!-- Başlık -->
+    <div class="main-header">
+      <img src="img/logo_transparent.png" alt="Logo" class="logo">
+      <h1>Ahmet ÇAKIR - Kişisel Web Sayfası</h1>
+
+      <!-- Sosyal Medya İkonları Başlık Altında -->
+      <div class="social-media">
+        <a href="https://www.instagram.com/ahmeetckirr/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="https://x.com/ahmeetckirr" target="_blank"><img src="img/x.png" alt="X"></a>
+        <a href="https://www.youtube.com/@ahmeetckirr" target="_blank"><img src="img/youtube.png" alt="YouTube"></a>
+        <a href="https://www.linkedin.com/in/ahmet-%C3%A7ak%C4%B1r-0184b2280/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://github.com/ahmetcakir0" target="_blank"><img src="img/github.png" alt="GitHub"></a>
+      </div>
+    </div>
+
+    <!-- Sayfa Kartları -->
+    <div class="card-container">
+       <div class="card">
+        <img src="img/kisisel_bilgiler.jpg" alt="Logo">
+        <h3>Ben Kimim?</h3>
+        <a href="amac.html" target="_blank">Git</a>
+       </div>
+      <div class="card">
+        <img src="img/egitim.png" alt="Logo">
+        <h3>Eğitim Bilgilerim</h3>
+        <a href="egitim.html" target="_blank">Git</a>
+       </div>
+      <div class="card">
+        <img src="img/eposta.png" alt="Logo">
+        <h3>İletişim</h3>
+        <a href="iletisim.html" target="_blank">Git</a>
+       </div>
+      <div class="card">
+        <img src="img/cv.jpg" alt="Logo">
+        <h3>Hakkımda</h3>
+        <a href="hakkımda.html" target="_blank">Git</a>
+       </div>
+     </div>
+   </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>Hakkında | Bilgilerim | İletişim</div>
+    <div>Email: ahmethmo8@gmail.com</div>
+    <div>© 2025 Tüm hakları saklıdır.</div>
+  </footer>
+
+</body>
+</html>
